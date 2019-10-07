@@ -8,6 +8,8 @@
 
 import Foundation
 
+//task 1
+
 func getNumber() -> Int {
     let maxBoard: UInt32 = 20
     var currentValue = Int(arc4random_uniform(maxBoard) + 1)
@@ -45,5 +47,32 @@ if (d>0) {
 } else {
     print("Дискриминант меньше нуля. Корней нет")
 }
+
+//task 2
+
+let catOne = 4
+let catTwo = 3
+
+let s = Double(catOne*catTwo)/2
+let g = sqrt(Double(catOne*catOne) + Double(catTwo*catTwo))
+let p = Double(catOne + catTwo) + g
+print("Затаны катеты: \(catOne) и \(catTwo) \n"
++ "гипонетнуза: \(String(format: "%.3f", g)) \n"
++ "площадь: \(String(format: "%.3f", s)) \n"
++ "периметр \(String(format: "%.3f", p))")
+
+//task 3
+
+print("Введите сумму вклада:")
+let value = Int(readLine() ?? "0") ?? 0
+print("Введите годовой процент:")
+let percent = Int(readLine() ?? "0")  ?? 0
+print("Введите срок вклада(лет):")
+let time = Int(readLine() ?? "0") ?? 0
+var totalprice = Double(value)
+for _ in 1 ... time {
+    totalprice = totalprice + totalprice*Double(percent)/100
+}
+print("Итоговая сумма по вкладу будет составлять \(String(format: "%.3f", totalprice)) руб")
 
 
